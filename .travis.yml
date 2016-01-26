@@ -9,3 +9,4 @@ deploy:
   file: internal/cld2.tar.gz
   on:
     repo: przemyslaw-pokrywka-smt/cld2
+    tags: true
