@@ -1,7 +1,9 @@
 language: cpp
 script:
   - "(cd internal; ./compile_and_test_all.sh)"
-  - "(cd internal; tar cvfz cld2.tar.gz cld2_data.bin cld2_dynamic_data_tool cld2_dynamic_unittest cld2_unittest_avoid_chrome_2 cld2_unittest_chrome_2 cld2_unittest_full cld2_unittest_full_avoid compact_lang_det_dynamic_test_chrome compact_lang_det_test_chrome_16 compact_lang_det_test_chrome_2 compact_lang_det_test_full libcld2.so libcld2_dynamic.so libcld2_full.so)"
+  - "tar cvfz cld2.tar.gz \
+       internal/*.so \
+       internal/*.h public/*.h"
 deploy:
   provider: releases
   api_key:
