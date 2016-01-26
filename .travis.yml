@@ -1,9 +1,12 @@
 language: cpp
 script:
   - "(cd internal; ./compile_and_test_all.sh)"
+  - "mkdir cld2"
+  - "mv internal public cld2/"
   - "tar cvfz cld2.tar.gz \
-       internal/*.so \
-       internal/*.h public/*.h"
+       cld2/internal/*.so \
+       cld2/internal/*.h \
+       cld2/public/*.h"
 deploy:
   provider: releases
   api_key:
