@@ -2,3 +2,4 @@ language: cpp
 compiler:
 - clang
 - gcc
+script: ./internal/compile_and_test_all.sh
