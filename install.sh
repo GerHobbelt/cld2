@@ -27,8 +27,10 @@ CLD2_LIB_PATH=$PREFIX/lib
 CLD2_PKGCONFIG_PATH=$CLD2_LIB_PATH/pkgconfig
 
 echo "Installing headers to $CLD2_INCLUDE_PATH"
-mkdir -p $CLD2_INCLUDE_PATH
-cp public/*.h internal/integral_types.h internal/lang_script.h internal/generated_language.h internal/generated_ulscript.h $CLD2_INCLUDE_PATH
+mkdir -p $CLD2_INCLUDE_PATH/public
+mkdir -p $CLD2_INCLUDE_PATH/internal
+cp public/*.h $CLD2_INCLUDE_PATH/public
+cp internal/integral_types.h internal/lang_script.h internal/generated_language.h internal/generated_ulscript.h $CLD2_INCLUDE_PATH/internal
 
 echo "Installing libraries to $CLD2_LIB_PATH (you probably want to run ldconfig)"
 mkdir -p $CLD2_LIB_PATH
